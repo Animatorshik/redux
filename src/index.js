@@ -39,6 +39,10 @@ store.subscribe(() => {
 
 	counter.textContent = state.counter;
 	document.body.className = state.theme.value;
+
+	[addBtn, subBtn, themeBtn].forEach(btn => {
+		btn.disabled = state.theme.disabled;
+	});
 });
 
 store.dispatch({ type: 'INIT_APPLICATION' });
